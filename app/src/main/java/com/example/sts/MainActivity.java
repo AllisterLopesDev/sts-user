@@ -2,7 +2,9 @@ package com.example.sts;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -25,6 +27,16 @@ public class MainActivity extends AppCompatActivity {
         pass = findViewById(R.id.pass);
         login_btn = findViewById(R.id.login_btn);
         reg_btn = findViewById(R.id.reg_btn);
+
+
+        reg_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i  = new Intent(getApplicationContext(), RegActivity.class);
+                startActivity(i);
+            }
+        });
 
 
 

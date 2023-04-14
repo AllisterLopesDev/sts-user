@@ -31,8 +31,6 @@ public class RegActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent i  = new Intent(getApplicationContext(), RegActivity.class);
-                startActivity(i);
             }
         });
 
