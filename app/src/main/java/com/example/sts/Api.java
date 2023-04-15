@@ -13,7 +13,7 @@ public interface Api {
     @FormUrlEncoded
     @POST("register")
     Call<RegisterResponse> register(
-            @Field("username") String username,
+            @Field("email") String username,
             @Field("password") String password
     );
 

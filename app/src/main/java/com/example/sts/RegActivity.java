@@ -22,7 +22,7 @@ public class RegActivity extends AppCompatActivity {
 
 
     TextView tv1;
-    EditText user, pass;
+    EditText email, pass;
     Button reg_btn;
 
     @Override
@@ -32,7 +32,7 @@ public class RegActivity extends AppCompatActivity {
 
 
         tv1 = findViewById(R.id.tv1);
-        user = findViewById(R.id.username);
+         email= findViewById(R.id.username);
         pass = findViewById(R.id.pass);
         reg_btn = findViewById(R.id.reg_btn);
 
@@ -49,15 +49,15 @@ public class RegActivity extends AppCompatActivity {
 
     private void registerUser() {
 
-        String username = user.getText().toString();
+        String userEmail = email.getText().toString();
         String password = pass.getText().toString();
 
         //username
-        if (username.isEmpty()){
-            user.requestFocus();
-            user.setError("Please enter your username");
-            return;
-        }
+//        if (username.isEmpty()){
+//            user.requestFocus();
+//            user.setError("Please enter your username");
+//            return;
+//        }
 
 
         //password
@@ -74,7 +74,7 @@ public class RegActivity extends AppCompatActivity {
 
 
         //validation for email
-        /*if (userEmail.isEmpty()){
+        if (userEmail.isEmpty()){
             email.requestFocus();
             email.setError("Please enter your email");
             return;
@@ -83,12 +83,12 @@ public class RegActivity extends AppCompatActivity {
             email.requestFocus();
             email.setError("Please enter correct email");
             return;
-        }*/
+        }
 
         Call<RegisterResponse> call = RetrofitClient
                 .getInstance()
                 .getApi()
-                .register(username,password);
+                .register(userEmail,password);
 
         call.enqueue(new Callback<RegisterResponse>() {
             @Override
