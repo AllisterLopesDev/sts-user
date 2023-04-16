@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
-    private static String BASE_URL = "http://127.0.0.1:5000/user/";
+    private static String BASE_URL = "https://192.168.0.21:5000/user/";
     private  static RetrofitClient retrofitClient;
     private  static Retrofit retrofit;
 
@@ -16,6 +16,7 @@ public class RetrofitClient {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
+
 
     public static  synchronized RetrofitClient getInstance(){
 

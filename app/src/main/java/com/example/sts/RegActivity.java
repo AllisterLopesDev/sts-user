@@ -32,7 +32,7 @@ public class RegActivity extends AppCompatActivity {
 
 
         tv1 = findViewById(R.id.tv1);
-         email= findViewById(R.id.username);
+        email= findViewById(R.id.email);
         pass = findViewById(R.id.pass);
         reg_btn = findViewById(R.id.reg_btn);
 
@@ -51,13 +51,6 @@ public class RegActivity extends AppCompatActivity {
 
         String userEmail = email.getText().toString();
         String password = pass.getText().toString();
-
-        //username
-//        if (username.isEmpty()){
-//            user.requestFocus();
-//            user.setError("Please enter your username");
-//            return;
-//        }
 
 
         //password
@@ -106,6 +99,7 @@ public class RegActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<RegisterResponse> call, Throwable t) {
 
+                Toast.makeText(RegActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
